@@ -19,7 +19,7 @@ public class Client {
 
                 while (clientSocket.isConnected()) {
 
-                    System.out.println("Вы что-то хотели сказать? Введите это здесь:");
+                    System.out.println("Введите команду здесь:");
 
                     String command = reader.readLine();
                     out.write(command + "\n");
