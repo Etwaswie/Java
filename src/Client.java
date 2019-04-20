@@ -26,6 +26,7 @@ public class Client {
                     out.flush();
                     String serverWord = in.readLine();
                     System.out.println(serverWord);
+
                 }
 
             } finally {

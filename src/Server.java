@@ -13,35 +13,22 @@ public class Server {
     public static void main(String[] args) throws IOException {
         try {
             try {
-
                 server = new ServerSocket(666);
                 System.out.println("Сервер запущен!");
-                clientSocket = server.accept(); //waiting for connect
-
-                if (clientSocket.isConnected()){
-                    System.out.println(1);
-                }
+                clientSocket = server.accept();
                 try {
-                    String argue = null, newCommand;
-
                     in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                     out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+                    String argue = null, newCommand;
+                    ArrayBlockingQueue<Posuda> posuda = new ArrayBlockingQueue<>(5);
 
                     while (clientSocket.isConnected()) {
                         String command = in.readLine(); // ждём пока клиент что-нибудь нам напишет
-                        System.out.println(command);
-                        out.write("Привет, это Сервер! Получил команду!");
+                        out.write("Привет, это Сервер! Подтверждаю, вы ввели команду: " + command + "\n");
                         out.flush();
-
                         command = command.replaceAll("\\s+", "");
-                        System.out.println(command);
 
-                        File file = new File("C:\\Users\\Yulia\\IdeaProjects\\Laba5\\src\\Posuda.xml");
-                        ArrayBlockingQueue<Posuda> posuda = new ArrayBlockingQueue<>(5);
-
-                        label:
                         if (command.contains("{") & command.contains("}")) {
-
                             argue = command.substring(command.indexOf("{") + 1, command.indexOf("}"));
                             newCommand = command.substring(0, command.indexOf("{"));
 
@@ -53,6 +40,8 @@ public class Server {
                             case "add":
 
                                 Commands.add(argue, posuda);
+                                out.write("Item " + argue + " was successfully added");
+                                out.flush();
                                 break;
 
                             case "show":
@@ -101,6 +90,7 @@ public class Server {
                                 break;
                         }
                     }
+
                 } finally {
 
                     System.out.println("dfjkhgkdf");
