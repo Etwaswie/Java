@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.Socket;
-
+//проверочка
 public class Client {
     private static Socket clientSocket; //сокет для общения
     private static BufferedReader reader;
