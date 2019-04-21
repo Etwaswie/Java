@@ -3,10 +3,14 @@ import java.util.Comparator;
 public class Posuda implements Comparator {
 
     private String name;
+    int size;
+    int date;
+    int local;
 
     public Posuda(String name) {
         this.name = name;
     }
+
 
     public String getName() {
         return name;

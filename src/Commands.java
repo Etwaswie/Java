@@ -2,103 +2,76 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 
-    class Commands {
+import static java.lang.System.out;
+
+class Commands {
 
         private static Date date = new Date();
         private static SimpleDateFormat fDate = new SimpleDateFormat("dd.MM.yyy hh:mm:ss");
 
-        /**
-         * ??????? ????????? ???????? ? ?????????
-         * @param argue - ????????
-         * @param posuda - ????????? ?????????
-         */
-        static void add(String argue, ArrayDeque<Posuda> posuda) {
+
+        static void add(String argue, ArrayBlockingQueue<Posuda> posuda) {
             if (argue.equals("")) {
-                System.out.println("You can't add null element!");
+                out.println("You can't add null element!");
             } else {
                 posuda.add(new Posuda(argue));
-                System.out.println("Item " + argue + " was successfully added!");
+                /*out.println("Item " + argue + " was successfully added");*/
             }
         }
 
-        /**
-         * ??????? ??????????? ???? ????????? ?????????
-         * @param posuda - ????????? ?????????
-         */
-        static void show(ArrayDeque<Posuda> posuda) {
+
+        static void show(ArrayBlockingQueue<Posuda> posuda) {
             if (posuda.size() == 0) {
-                System.out.println("This collection is empty :( Put some items!");
+                out.println("This collection is empty :( Put some items!");
             } else {
-                System.out.println("Your collection consist of: ");
+                out.println("Your collection consist of: ");
                 for (Posuda p : posuda) {
-                    System.out.println(p.getName());
+                    out.println(p.getName());
                 }
             }
         }
 
-        /**
-         * ??????? ??????????? ?????????? ? ?????????
-         * @param posuda - ????????? ?????????
-         */
-        static void info(ArrayDeque<Posuda> posuda) {
-            System.out.println("Collection type: " + posuda.getClass() + "\n" + "Date of initialization: " + fDate.format(date));
-            System.out.println("Number of items: " + posuda.size());
+
+        static void info(ArrayBlockingQueue<Posuda> posuda) {
+            out.println("Collection type: " + posuda.getClass() + "\n" + "Date of initialization: " + fDate.format(date));
+            out.println("Number of items: " + posuda.size());
         }
 
-        /**
-         * ??????? ???????? ???? ????????? ?????????
-         * @param posuda - ????????? ?????????
-         */
-        static void clear(ArrayDeque<Posuda> posuda) {
+
+        static void clear(ArrayBlockingQueue<Posuda> posuda) {
             posuda.clear();
-            System.out.println("You deleted all items!");
+            out.println("You deleted all items!");
         }
 
-
-        /**
-         * ??????? ???????? ?????????? ????????
-         * @param argue - ????????
-         * @param posuda - ????????? ?????????
-         */
-        static void delete(String argue, ArrayDeque<Posuda> posuda) {
+        static void delete(String argue, ArrayBlockingQueue<Posuda> posuda) {
             for (Posuda p : posuda) {
 
                 if (p.getName().equals(argue)) {
                     posuda.remove(p);
                 }
             }
-            System.out.println("Item " + argue + " was deleted!");
+            out.println("Item " + argue + " was deleted!");
         }
 
-        /**
-         * ??????? ???????? ???? ????????? ?????????, ??????? ????? ?? ????????
-         * @param argue - ????????
-         * @param posuda - ????????? ?????????
-         */
-        static void remove_lower(String argue, ArrayDeque<Posuda> posuda) {
+
+        static void remove_lower(String argue, ArrayBlockingQueue<Posuda> posuda) {
             for (Posuda p : posuda) {
                 if (p.getName().compareTo(argue) < 0) {
                     posuda.remove(p);
                 }
             }
-            System.out.println("All items lower than this was deleted!");
+            out.println("All items lower than this was deleted!");
         }
 
-        /**
-         * ???????, ??????????? ?????? ??????????
-         */
+
         static void exit() {
-            System.out.println("See you later :)");
+            out.println("See you later :)");
         }
 
-        /**
-         * ???????, ????????????? ?????? ?? ?????????? ?????
-         * @param argue - ???????? (???? ? ?????)
-         * @param posuda - ????????? ?????????
-         * @throws FileNotFoundException - файл не найден
-         */
-        static void importer(String argue, ArrayDeque<Posuda> posuda) throws FileNotFoundException {
+
+        static void importer(String argue, ArrayBlockingQueue<Posuda> posuda) throws FileNotFoundException {
             File file2 = new File(argue);
             Scanner scanner2 = new Scanner(file2);
             while (scanner2.hasNext()) {
@@ -108,7 +81,7 @@ import java.util.*;
                     posuda.add(new Posuda(name));
                 }
             }
-            System.out.println("The file was imported successfully!");
+            out.println("The file was imported successfully!");
         }
 
     }
