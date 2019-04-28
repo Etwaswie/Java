@@ -1,0 +1,7 @@
+<?xml version= "1.0"encoding="utf-8"?>
+<Ship>
+<Ship name="марина" size="56" place="порт" date="156"/>
+<Ship size="маленький" color="белый"/>
+<Ship size="средний" color="красный"/>
+<Ship size="большой" color="белый"/>
+<Ship/>
