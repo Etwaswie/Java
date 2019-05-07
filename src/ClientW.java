@@ -11,7 +11,7 @@ public class ClientW {
     public static void main(String[] args) {
         try {
             try {
-                clientSocket = new Socket("localhost", 45000);
+                clientSocket = new Socket("localhost", 17686);
                 reader = new BufferedReader(new InputStreamReader(System.in));
                 out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
@@ -29,13 +29,16 @@ public class ClientW {
                 }
 
 
-            } finally {
-               // System.out.println("Клиент был закрыт...");
+            }
+            catch (NullPointerException e){
+                System.out.println("no");}
+            /*finally {
+                System.out.println("Клиент был закрыт...");
                 clientSocket.close();
                 in.close();
-                out.close();
-            }
-        } catch (Exception e) {
+                out.close();*/
+
+        } catch (IOException e) {
             System.out.println("Клиент закрыт.");
         }
 

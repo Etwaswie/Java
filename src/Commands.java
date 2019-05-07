@@ -2,22 +2,22 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Collections;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentLinkedQueue;
+
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Commands {
-    public static LinkedList<Ship> makeLinkedList() {
+    public static CopyOnWriteArrayList<Ship> makeLinkedList() {
 
 
-        LinkedList<Ship> ships = new LinkedList<>();
+        CopyOnWriteArrayList<Ship> ships = new CopyOnWriteArrayList<>();
         String inLine;
         int index = 0;
         String name = null;
         int size = 0;
         String place = null;
         try (
-                BufferedReader reader = new BufferedReader(new FileReader("src/ships.xml"))) {
+                BufferedReader reader = new BufferedReader(new FileReader("ships.xml"))) {
             while ((inLine = reader.readLine()) != null) {
                 Scanner scanner = new Scanner(inLine);
                 scanner.useDelimiter(", ");
@@ -47,7 +47,7 @@ public class Commands {
         return ships;
     }
 
-    public static void info(LinkedList<Ship> ships, Date date, Date dateOfChanging, Socket clientSocket) {
+    public static void info(CopyOnWriteArrayList<Ship> ships, Date date, Date dateOfChanging, Socket clientSocket) {
         String allInfo = "Тип коллекции: " + ships.getClass() + "\n" + "Кол-во элементов: " + ships.size() +
                 "\n" + "Дата создания: " + date + "\n" + "Дата последнего взаимодействия: " + dateOfChanging;
         Commands.sendMessageToClient(allInfo, clientSocket);
@@ -72,14 +72,14 @@ public class Commands {
         }
     }
 
-    public static void show(LinkedList<Ship> ships, Socket clientSocket) {
+    public static void show(CopyOnWriteArrayList<Ship> ships, Socket clientSocket) {
         StringBuilder message = new StringBuilder();
         ships.sort(Ship::compareTo);
         ships.forEach(ship -> message.append(ship.toString()));
         Commands.sendMessageToClient(message.toString(), clientSocket);
     }
 
-    public static void add(LinkedList<Ship> ships, String name, int size, String place, Socket clientSocket) {
+    public static void add(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
         Date dateOfCreating = new Date();
         Ship s = new Ship(name, size, place, dateOfCreating);
         ships.add(s);
@@ -87,7 +87,7 @@ public class Commands {
         Commands.sendMessageToClient("Элемент добавлен.", clientSocket);
     }
 
-    public static void add_if_max(LinkedList<Ship> ships, String name, int size, String place, Socket clientSocket) {
+    public static void add_if_max(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
         Ship ship = new Ship(name, size, place);
         if (ship.getSize() > Collections.max(ships, new ShipComparator()).size) {
             ships.add(ship);
@@ -95,7 +95,7 @@ public class Commands {
         } else Commands.sendMessageToClient("Элемент не добавлен.", clientSocket);
     }
 
-    public static void add_if_min(LinkedList<Ship> ships, String name, int size, String place, Socket clientSocket) {
+    public static void add_if_min(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
         Ship ship = new Ship(name, size, place);
         if (ship.getSize() < Collections.min(ships, new ShipComparator()).size) {
             ships.add(ship);
@@ -103,8 +103,8 @@ public class Commands {
         } else Commands.sendMessageToClient("Элемент не добавлен.", clientSocket);
     }
 
-    public static void remove(LinkedList<Ship> ships, String name, int size, String place, Socket clientSocket) {
-        LinkedList<Ship> toRemove = new LinkedList<>();
+    public static void remove(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
+        CopyOnWriteArrayList<Ship> toRemove = new CopyOnWriteArrayList<>();
         for (Ship s : ships) {
             if ((s.getSize() == (size)) && (s.getName().equals(name)) && (s.getPlace().equals(place))) {
                 toRemove.add(s);
@@ -116,8 +116,8 @@ public class Commands {
         ships.removeAll(toRemove);
     }
 
-    public static void remove_lower(LinkedList<Ship> ships, String name, int size, String place, Date date, Socket clientSocket) {
-        LinkedList<Ship> toRemove = new LinkedList<>();
+    public static void remove_lower(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Date date, Socket clientSocket) {
+        CopyOnWriteArrayList<Ship> toRemove = new CopyOnWriteArrayList<>();
         Ship sh = new Ship(name, size, place, date);
         for (Ship s : ships) {
             if (s.getSize() > 0) {

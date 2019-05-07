@@ -2,16 +2,16 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
-import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MyThread implements Runnable {
 
     ServerSocket serverSocket;
     Socket clientSocket;
     Date date;
-    LinkedList<Ship> ships;
+    CopyOnWriteArrayList<Ship> ships;
 
-    public MyThread(ServerSocket serverSocket, Socket clientSocket, LinkedList<Ship> ships, Date date) {
+    public MyThread(ServerSocket serverSocket, Socket clientSocket, CopyOnWriteArrayList<Ship> ships, Date date) {
         this.clientSocket = clientSocket;
         this.serverSocket = serverSocket;
         this.ships = ships;
@@ -62,26 +62,30 @@ public class MyThread implements Runnable {
                             (readClientStream.contains("\"name\"")) && (readClientStream.contains("}") &&
                             (readClientStream.contains("\"place\""))))) {
 
-                        String a = readClientStream;
-                        String[] ab = a.split(":\"", 5);
-                        String name = ab[1].substring(0, ab[1].indexOf("\""));
-                        int size = Integer.parseInt(ab[2].substring(0, ab[2].indexOf("\"")));
-                        String place = ab[3].substring(0, ab[1].indexOf("\"") - 1);
-                        if (a.startsWith("add{")) {
-                            Commands.add(ships, name, size, place, clientSocket);
-                        }
-                        else if (a.startsWith("add_if_max")){
-                            Commands.add_if_max(ships, name, size, place, clientSocket);
-                        }
-                        else if (a.startsWith("add_if_min")){
-                            Commands.add_if_min(ships, name, size, place, clientSocket);
-                        }
-                        else if (a.startsWith("remove{")){
-                            Commands.remove(ships, name, size, place, clientSocket);
-                        }
-                        else if (a.startsWith("remove_lower")){
-                            Commands.remove_lower(ships, name, size, place,date, clientSocket);
-                        }
+                        try{ParseLine.parseLine(readClientStream,ships,clientSocket,date);}
+                        catch (Exception e) {
+                            Commands.sendMessageToClient("Введите команду получше",clientSocket);}
+
+
+                        /*
+                             String a = readClientStream;
+                             String[] ab = a.split(":\"", 5);
+                            String name = ab[1].substring(0, ab[1].indexOf("\""));
+                            int size = Integer.parseInt(ab[2].substring(0, ab[2].indexOf("\"")));
+                            String place = ab[3].substring(0, ab[1].indexOf("\"") - 1);
+
+
+                            if (a.startsWith("add{")) {
+                                Commands.add(ships, name, size, place, clientSocket);
+                            } else if (a.startsWith("add_if_max")) {
+                                Commands.add_if_max(ships, name, size, place, clientSocket);
+                            } else if (a.startsWith("add_if_min")) {
+                                Commands.add_if_min(ships, name, size, place, clientSocket);
+                            } else if (a.startsWith("remove{")) {
+                                Commands.remove(ships, name, size, place, clientSocket);
+                            } else if (a.startsWith("remove_lower")) {
+                                Commands.remove_lower(ships, name, size, place, date, clientSocket);
+                            }*/
 
 
                     } else {
@@ -94,8 +98,7 @@ public class MyThread implements Runnable {
             }
         } catch (Exception e) {
             System.out.println("До свидания!");
-        }
-        finally {
+        } finally {
             System.exit(0);
         }
     }
