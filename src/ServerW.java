@@ -7,8 +7,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ServerW {
     public static void main(String[] args) {
         try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             Date date = new Date();
             CopyOnWriteArrayList<Ship> ships = Commands.makeLinkedList();
+
+
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 System.out.println("Сервер Остановлен");
                 try (FileWriter writer = new FileWriter("ships.xml", false)) {
@@ -43,6 +46,9 @@ public class ServerW {
             while (!serverSocket.isClosed()) {
                 try {
                     clientSocket = serverSocket.accept();
+                    /*if (reader.readLine()=="stop"){
+                        System.out.println("stooop");
+                    }*/
                 } catch (IOException e) {
                     System.out.println("Порт: " + port + " - ошибка подключения");
                     System.exit(-1);
@@ -50,7 +56,8 @@ public class ServerW {
 
                 MyThread myThread = new MyThread(serverSocket, clientSocket, ships, date);
                 Thread thread = new Thread(myThread);
-                thread.start();}
+                thread.start();
+                }
 
         } catch (Exception e) {
             System.out.println("ошибка");

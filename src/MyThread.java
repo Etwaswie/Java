@@ -89,7 +89,8 @@ public class MyThread implements Runnable {
 
 
                     } else {
-                        Commands.sendMessageToClient("Введите команду получше", clientSocket);
+
+                        Commands.sendMessageToClient("Введите команду получше. Примеры команд:"+"\n"+"show , info , add{}, add_if_max{}, add_in_min{}, remove{}, remove_lower{}, stop"+"\n"+ "Пример:" +"\n"+"add{\"name\":\"имя\",\"color\":\"цвет\",\"place\":\"место\"}" ,clientSocket);
                     }
 
 
@@ -97,9 +98,7 @@ public class MyThread implements Runnable {
 
             }
         } catch (Exception e) {
-            System.out.println("До свидания!");
-        } finally {
-            System.exit(0);
+            System.out.println("Один из клиентов был отключен");
         }
     }
 }
