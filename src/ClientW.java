@@ -11,7 +11,7 @@ public class ClientW {
     public static void main(String[] args) {
         try {
             try {
-                clientSocket = new Socket("localhost", 17686);
+                clientSocket = new Socket("localhost",  63485);
                 reader = new BufferedReader(new InputStreamReader(System.in));
                 out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
@@ -22,7 +22,7 @@ public class ClientW {
                     out.flush();
                     DataInputStream in = new DataInputStream(clientSocket.getInputStream());
                     String serverAnswer = in.readUTF();
-                    System.out.println("Сервер ответил: \n" + serverAnswer);
+                    System.out.println("Сервер ответил: \n"+ serverAnswer);
                     if (serverAnswer.equals("Работа завершена")){
                         System.exit(1);
                     }

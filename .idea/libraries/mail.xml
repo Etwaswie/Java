@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="mail">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/mail" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/mail/docs/javadocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/mail/demo" />
+      <root url="file://$PROJECT_DIR$/mail/demo/client" />
+      <root url="file://$PROJECT_DIR$/mail/demo/logging" />
+      <root url="file://$PROJECT_DIR$/mail/demo/outlook" />
+      <root url="file://$PROJECT_DIR$/mail/demo/servlet" />
+      <root url="file://$PROJECT_DIR$/mail/demo/webapp/src/classes" />
+      <root url="file://$PROJECT_DIR$/mail/demo/webapp/src/taglib" />
+      <root url="file://$PROJECT_DIR$/mail" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/mail" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/mail" recursive="false" type="SOURCES" />
+  </library>
+</component>

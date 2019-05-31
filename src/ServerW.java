@@ -18,7 +18,8 @@ public class ServerW {
                     for (Ship ship : ships) {
                         writer.write(ship.getName() + ", ");
                         writer.write(ship.getSize() + ", ");
-                        writer.write(ship.getPlace());
+                        writer.write(ship.getPlace()+", ");
+                        writer.write(ship.getCreator());
                         writer.write("\n");
                     }
                     writer.flush();
@@ -27,7 +28,7 @@ public class ServerW {
                 }
             }));
 
-            int port = 17686;
+            int port = 63485;
 
             //Проверяем доступность порта
             ServerSocket serverSocket = null;
@@ -46,15 +47,12 @@ public class ServerW {
             while (!serverSocket.isClosed()) {
                 try {
                     clientSocket = serverSocket.accept();
-                    /*if (reader.readLine()=="stop"){
-                        System.out.println("stooop");
-                    }*/
                 } catch (IOException e) {
                     System.out.println("Порт: " + port + " - ошибка подключения");
                     System.exit(-1);
                 }
 
-                MyThread myThread = new MyThread(serverSocket, clientSocket, ships, date);
+                PoThread myThread = new PoThread(serverSocket, clientSocket, ships, date);
                 Thread thread = new Thread(myThread);
                 thread.start();
                 }

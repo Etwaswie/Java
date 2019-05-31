@@ -16,6 +16,7 @@ public class Commands {
         String name = null;
         int size = 0;
         String place = null;
+        String creator = null;
         try (
                 BufferedReader reader = new BufferedReader(new FileReader("ships.xml"))) {
             while ((inLine = reader.readLine()) != null) {
@@ -29,14 +30,16 @@ public class Commands {
                         size = Integer.parseInt(data);
                     } else if (index == 2) {
                         place = data;
+                    }else if (index==3){
+                        creator = data;
                     } else {
                         System.out.println("некоррекные данные");
                     }
                     index++;
                 }
                 index = 0;
-                Date dateOfCReating = new Date();
-                ships.add(new Ship(name, size, place, dateOfCReating));
+                //Date dateOfCReating = new Date();
+                ships.add(new Ship(name, size, place, creator));
             }
 
         } catch (FileNotFoundException e) {
@@ -79,35 +82,42 @@ public class Commands {
         Commands.sendMessageToClient(message.toString(), clientSocket);
     }
 
-    public static void add(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
-        Date dateOfCreating = new Date();
-        Ship s = new Ship(name, size, place, dateOfCreating);
+    public static void add(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket, String creator) {
+        Ship s = new Ship(name, size, place, creator);
         ships.add(s);
 
         Commands.sendMessageToClient("Элемент добавлен.", clientSocket);
     }
 
-    public static void add_if_max(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
-        Ship ship = new Ship(name, size, place);
+    public static void help(Socket clientSocket){
+        Commands.sendMessageToClient("Примеры команд:"+"\n"+"show , info , add{}, add_if_max{}, add_in_min{}, remove{}, remove_lower{}, stop"+"\n"+ "Пример:" +"\n"+"add{\"name\":\"корабль\",\"size\":\"5000\",\"place\":\"гавань\"}" ,clientSocket);
+
+    }
+
+    public static void add_if_max(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket, String username) {
+        Ship ship = new Ship(name, size, place,username);
         if (ship.getSize() > Collections.max(ships, new ShipComparator()).size) {
             ships.add(ship);
             Commands.sendMessageToClient("Элемент добавлен.", clientSocket);
         } else Commands.sendMessageToClient("Элемент не добавлен.", clientSocket);
     }
 
-    public static void add_if_min(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
-        Ship ship = new Ship(name, size, place);
+    public static void add_if_min(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket, String username) {
+        Ship ship = new Ship(name, size, place,username);
         if (ship.getSize() < Collections.min(ships, new ShipComparator()).size) {
             ships.add(ship);
             Commands.sendMessageToClient("Элемент добавлен.", clientSocket);
         } else Commands.sendMessageToClient("Элемент не добавлен.", clientSocket);
     }
 
-    public static void remove(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket) {
+    /*public static void remove(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Socket clientSocket, String username) {
         CopyOnWriteArrayList<Ship> toRemove = new CopyOnWriteArrayList<>();
         for (Ship s : ships) {
-            if ((s.getSize() == (size)) && (s.getName().equals(name)) && (s.getPlace().equals(place))) {
+            if ((s.getSize() == (size)) && (s.getName().equals(name)) && (s.getPlace().equals(place))&&(s.creator.equals(username))) {
                 toRemove.add(s);
+            }
+            else if (!s.creator.equals(username)){
+                Commands.sendMessageToClient("Нет доступа к элементу",clientSocket);
             }
         }
         if (toRemove.isEmpty()) {
@@ -116,9 +126,9 @@ public class Commands {
         ships.removeAll(toRemove);
     }
 
-    public static void remove_lower(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Date date, Socket clientSocket) {
+    public static void remove_lower(CopyOnWriteArrayList<Ship> ships, String name, int size, String place, Date date, Socket clientSocket, String username) {
         CopyOnWriteArrayList<Ship> toRemove = new CopyOnWriteArrayList<>();
-        Ship sh = new Ship(name, size, place, date);
+        Ship sh = new Ship(name, size, place, username);
         for (Ship s : ships) {
             if (s.getSize() > 0) {
                 if (s.getSize() < sh.getSize()) {
@@ -128,14 +138,40 @@ public class Commands {
         }
 
         if (sh.getSize() == 0) {
+
             Commands.sendMessageToClient("Неверный формат", clientSocket);
+        } else if (!sh.creator.equals(username)){
+            Commands.sendMessageToClient("Нет доступа к элементу",clientSocket);
+
         } else if (toRemove.isEmpty()) {
             Commands.sendMessageToClient("Элементы не удалены.", clientSocket);
         } else Commands.sendMessageToClient("Элементы удалены.", clientSocket);
         ships.removeAll(toRemove);
 
 
-    }
+    }*/
+
+
+    public static void remove(
+                              CopyOnWriteArrayList<Ship> ships, Socket clientSocket,int num, String userName) {
+
+        /**
+         * выполняем комманду remove
+         */
+
+            int numberOfElement;
+            //получаем число, которое содержится в фигурных скобках
+
+            numberOfElement = num;
+            if (numberOfElement > ships.size() - 1) {
+                Commands.sendMessageToClient("Такого элемента не существует", clientSocket);
+            } else if (!ships.get(numberOfElement).getCreator().equals(userName)){
+                Commands.sendMessageToClient("Нет доступа к данному элементу", clientSocket);
+            } else {
+                ships.remove(numberOfElement);
+                Commands.sendMessageToClient("Успешно удален " + numberOfElement + " элемент из коллекции", clientSocket);
+            }
+        }
 }
 
 
