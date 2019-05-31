@@ -95,7 +95,7 @@ public class DatabaseCommands {
      * @param database база, в которую будем загружать
      * @param ships коллекция наших шоу
      */
-    public static void UploadShows(Connection database, CopyOnWriteArrayList<Ship> ships, Socket clientSocket){
+    public static void uploadShips(Connection database, CopyOnWriteArrayList<Ship> ships, Socket clientSocket){
         try {
             database.createStatement().executeUpdate("delete from \"Ship\"");
         } catch (SQLException e){
@@ -124,7 +124,7 @@ public class DatabaseCommands {
      * @param database
      * @param ships
      */
-    public static void UploadShows(Connection database, CopyOnWriteArrayList<Ship> ships){
+    public static void uploadShips(Connection database, CopyOnWriteArrayList<Ship> ships){
         try {
             database.createStatement().executeUpdate("delete from \"Ships\"");
         } catch (SQLException e){

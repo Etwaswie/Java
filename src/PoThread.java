@@ -3,10 +3,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
+public class PoThread  {}
 
-public class PoThread implements Runnable {
+//public class PoThread implements Runnable {
 
-    ServerSocket serverSocket;
+   /* ServerSocket serverSocket;
     Socket clientSocket;
     Date date;
     CopyOnWriteArrayList<Ship> ships;
@@ -94,3 +95,4 @@ public class PoThread implements Runnable {
         }
     }
 }
+*/

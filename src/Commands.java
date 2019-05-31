@@ -50,9 +50,9 @@ public class Commands {
         return ships;
     }
 
-    public static void info(CopyOnWriteArrayList<Ship> ships, Date date, Date dateOfChanging, Socket clientSocket) {
+    public static void info(CopyOnWriteArrayList<Ship> ships,  Socket clientSocket) {
         String allInfo = "Тип коллекции: " + ships.getClass() + "\n" + "Кол-во элементов: " + ships.size() +
-                "\n" + "Дата создания: " + date + "\n" + "Дата последнего взаимодействия: " + dateOfChanging;
+                "\n" ;
         Commands.sendMessageToClient(allInfo, clientSocket);
     }
 
@@ -172,6 +172,15 @@ public class Commands {
                 Commands.sendMessageToClient("Успешно удален " + numberOfElement + " элемент из коллекции", clientSocket);
             }
         }
+
+    public static void removeFirst(CopyOnWriteArrayList<Ship> ships, Socket clientSocket, String userName) {
+        if (ships.get(0).getCreator().equals(userName)) {
+            ships.remove(0);
+            sendMessageToClient("Успешно удален первый элемент из коллекции", clientSocket);
+        } else {
+            sendMessageToClient("Не удалось удалить элемент. Нет доступа к элементу", clientSocket);
+        }
+    }
 }
 
 

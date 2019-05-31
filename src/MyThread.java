@@ -1,6 +1,5 @@
 
 
-import javax.swing.*;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,15 +16,15 @@ public class MyThread implements Runnable {
 
     private ServerSocket serverSocket;
     private Socket clientSocket;
-    private CopyOnWriteArrayList<Show> listOfShows;
+    private CopyOnWriteArrayList<Ship> ships;
     private Connection database;
     private HashMap<String, String> Users;
 
-    public MyThread(ServerSocket serverSocket, Socket clientSocket, CopyOnWriteArrayList<Show> listOfShows,
+    public MyThread(ServerSocket serverSocket, Socket clientSocket, CopyOnWriteArrayList<Ship> ships,
                     Connection database, HashMap<String, String> Users) {
         this.clientSocket = clientSocket;
         this.serverSocket = serverSocket;
-        this.listOfShows = listOfShows;
+        this.ships = ships;
         this.database = database;
         this.Users = Users;
     }
@@ -186,7 +185,7 @@ public class MyThread implements Runnable {
                     if (key3) {
                         if ((Users.get(userMail)).equals(DatabaseCommands.MD5hash(readClientStream))) {
                             Commands.sendMessageToClient("Успешная авторизация.\n" +
-                                    "список доступных комманд:\n" +
+                                    "список доступных команд:\n" +
                                     "show | info |remove_first | remove | remove_greater | remove_lower | " +
                                     "stop | sort_by_theme | sort_by_rating ", clientSocket);
                             System.out.println("Пользователь " + userMail + " авторизовался");
@@ -222,41 +221,30 @@ public class MyThread implements Runnable {
                 while ((readClientStream = reader.readLine()) != null) {
                     //удалить первый элемент
                     if (readClientStream.equals("remove_first")) {
-                        Commands.removeFirst(listOfShows, clientSocket, userMail);
+                        Commands.removeFirst(ships, clientSocket, userMail);
                     } else if (readClientStream.equals("Save")) {
-                        DatabaseCommands.UploadShows(database, listOfShows, clientSocket);
+                        DatabaseCommands.uploadShips(database, ships, clientSocket);
                     }
                     //информация о коллекции
                     else if (readClientStream.equals("info")) {
-                        Commands.info(listOfShows, clientSocket);
+                        Commands.info(ships, clientSocket);
                     } //вывести лист
                     else if (readClientStream.equals("show")) {
-                        Commands.show(listOfShows, clientSocket);
-                    } //сортировка по рейтингу
-                    else if (readClientStream.equals("sort_by_rating")) {
-                        listOfShows = Show.sortShowsBy(ShowComparator.Order.Rating, listOfShows, clientSocket);
-                    } //сортировка по теме
-                    else if (readClientStream.equals("sort_by_theme")) {
-                        listOfShows = Show.sortShowsBy(ShowComparator.Order.Theme, listOfShows, clientSocket);
-                    } //реализация удаления элемента по номеру, большего или меньшего чем данный
-                    else if (CompareToCommand.compareRemove(readClientStream)) {
-                        Commands.remove(readClientStream, userMail, listOfShows, clientSocket);
+                        Commands.show(ships, clientSocket);
+
                     } //добавляем объект в нашу коллекцию
-                    else if (CompareToCommand.compareAdd(readClientStream)) {
-                        if (Commands.addElement(readClientStream, listOfShows, userMail)) {
+                    else if (readClientStream.startsWith("add")) {
+                        ParseLine.parseLine(readClientStream,ships,clientSocket);
                             Commands.sendMessageToClient("Успешно добавлен элемент в коллецию", clientSocket);
-                        } else {
-                            Commands.sendMessageToClient("Введена неверная комманда", clientSocket);
-                        }
                     } //остановить программу
                     else if (readClientStream.equals("stop")) {
-                        Commands.sendMessageToClient("Вы завершили работу. Идите с богом.", clientSocket);
-                        DatabaseCommands.UploadShows(database, listOfShows, clientSocket);
+                        Commands.sendMessageToClient("Вы завершили работу.", clientSocket);
+                        DatabaseCommands.uploadShips(database, ships, clientSocket);
                         reader.close();
                         clientSocket.close();
                         clientSocket = null;
                     } else if (readClientStream.equals("superStop")){
-                        DatabaseCommands.UploadShows(database, listOfShows, clientSocket);
+                        DatabaseCommands.uploadShips(database, ships, clientSocket);
                         reader.close();
                         clientSocket.close();
                         clientSocket = null;

@@ -14,7 +14,7 @@ public class ParseLine {
 
     }
 
-    static void parseLine(String readClientStream, CopyOnWriteArrayList<Ship> ships, Socket clientSocket, Date date){
+    static void parseLine(String readClientStream, CopyOnWriteArrayList<Ship> ships, Socket clientSocket){
         String a = readClientStream;
         String[] ab = a.split(":\"", 5);
         String name = ab[1].substring(0, ab[1].indexOf("\""));

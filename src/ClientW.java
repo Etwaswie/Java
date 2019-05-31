@@ -1,7 +1,7 @@
 import java.io.*;
 import java.net.Socket;
 
-public class ClientW {
+public class ClientW {} /*
 
     private static Socket clientSocket; //сокет для общения
     private static BufferedReader reader;
@@ -32,15 +32,15 @@ public class ClientW {
             }
             catch (NullPointerException e){
                 System.out.println("no");}
-            /*finally {
+            finally {
                 System.out.println("Клиент был закрыт...");
                 clientSocket.close();
                 in.close();
-                out.close();*/
+                out.close();
 
         } catch (IOException e) {
-            System.out.println("Клиент закрыт.");
+            System.out.println("Клиент закрыт.);
         }
 
     }
-}
+}*/

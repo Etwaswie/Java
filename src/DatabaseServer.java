@@ -19,9 +19,9 @@ public class DatabaseServer {
          * String userPassword = "coj266";
          * @database - переменная для обращения к базе данных и получение из нее данных
          */
-        String URL = "jdbc:postgresql://localhost:5433/studs";
+        String URL = "jdbc:postgresql://localhost:5433/postgres";
         String userLogin = "postgres";
-        String userPassword = "coj266";
+        String userPassword = "123";
         Connection database = new DatabaseConnection(URL, userLogin, userPassword).getConnection();
 
 
@@ -118,7 +118,7 @@ public class DatabaseServer {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                DatabaseCommands.UploadShows(database, ships);
+                DatabaseCommands.uploadShips(database, ships);
             }
         });
 
@@ -136,7 +136,7 @@ public class DatabaseServer {
             /**
              * запускаем для клиента отдельный поток, в котором он будет работать
              */
-            PoThread myThread = new PoThread(serverSocket, clientSocket, listOfShows, database, Users);
+             MyThread myThread= new MyThread(serverSocket, clientSocket, ships, database, Users);
             Thread thread = new Thread(myThread);
             thread.start();
         }

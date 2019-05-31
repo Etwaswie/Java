@@ -7,47 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3bb93ca-d554-4d5d-ba9c-613ccf9891ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Laba5_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Laba5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Laba5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Laba5_jar/server.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Laba5_jar2/Laba5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Laba5_jar3/portserv.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Laba5_jar3/portserver.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Laba5_jar4/portclient.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/checkclient/k.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/checkclient/s.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/checkserv/Laba5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/checkserver/checkserver.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Laba5/ClientW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/ClientW.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Laba5/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/Commands.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Laba5/MyThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/MyThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Laba5/ParseLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/ParseLine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Laba5/ServerW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/ServerW.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/Ship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/checkclient/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/checkserv/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/meta/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/metaclient/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/metaserv/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/portclient/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/portserver/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Laba5/ships.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Laba5/ships.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ships.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ships.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PoThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ParseLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParseLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PoThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PoThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerW.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/checkclient/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/checkserv/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/meta/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/metaclient/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/metaserv/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/portclient/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/portserver/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ships.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ships.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Commands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="816">
+              <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#sendMessageToClient#0;class#Commands#0" />
@@ -85,10 +58,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ParseLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="16" column="104" selection-start-line="16" selection-start-column="104" selection-end-line="16" selection-end-column="104" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="34">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DatabaseCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="149" column="1" lean-forward="true" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
+            <state relative-caret-position="1972">
+              <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,28 +96,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DatabaseServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="140" column="27" lean-forward="true" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
+            <state relative-caret-position="147">
+              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5628#5789#0" expanded="true" />
-                <element signature="e#5788#5789#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PoThread.java">
+        <entry file="file://$PROJECT_DIR$/src/DatabaseConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="340">
+              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -140,7 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="3961">
+              <caret line="240" column="74" selection-start-line="240" selection-start-column="74" selection-end-line="240" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,35 +144,35 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ClientW.java" />
         <option value="$PROJECT_DIR$/src/Client2.java" />
         <option value="$PROJECT_DIR$/src/GORGE.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/TestingThreads.java" />
         <option value="$PROJECT_DIR$/src/MyThread2.java" />
         <option value="$PROJECT_DIR$/src/Race.java" />
-        <option value="$PROJECT_DIR$/src/ServerW.java" />
         <option value="$PROJECT_DIR$/src/Ship.java" />
-        <option value="$PROJECT_DIR$/src/Commands.java" />
-        <option value="$PROJECT_DIR$/src/ParseLine.java" />
         <option value="$PROJECT_DIR$/src/ships.xml" />
         <option value="$PROJECT_DIR$/ships.xml" />
         <option value="$PROJECT_DIR$/src/MailSender.java" />
         <option value="$PROJECT_DIR$/src/PasswordGenerator.java" />
         <option value="$PROJECT_DIR$/src/DatabaseConnection.java" />
         <option value="$PROJECT_DIR$/src/DatabaseClient.java" />
-        <option value="$PROJECT_DIR$/src/PoThread.java" />
-        <option value="$PROJECT_DIR$/src/MyThread.java" />
-        <option value="$PROJECT_DIR$/src/DatabaseCommands.java" />
-        <option value="$PROJECT_DIR$/src/DatabaseServer.java" />
         <option value="$PROJECT_DIR$/src/EmailSender.java" />
+        <option value="$PROJECT_DIR$/src/DatabaseCommands.java" />
+        <option value="$PROJECT_DIR$/src/Commands.java" />
+        <option value="$PROJECT_DIR$/src/ParseLine.java" />
+        <option value="$PROJECT_DIR$/src/MyThread.java" />
+        <option value="$PROJECT_DIR$/src/PoThread.java" />
+        <option value="$PROJECT_DIR$/src/ServerW.java" />
+        <option value="$PROJECT_DIR$/src/ClientW.java" />
+        <option value="$PROJECT_DIR$/src/DatabaseServer.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="980" />
-    <option name="height" value="1031" />
+    <option name="x" value="-12" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,7 +180,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,13 +196,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559303182384" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559309811092" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mail" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -240,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServerW">
+  <component name="RunManager" selected="Application.DatabaseServer">
     <configuration name="Client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client2" />
       <module name="Laba5" />
@@ -250,6 +231,13 @@
     </configuration>
     <configuration name="ClientW" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientW" />
+      <module name="Laba5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DatabaseServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DatabaseServer" />
       <module name="Laba5" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -274,9 +262,11 @@
       <item itemvalue="Application.ClientW" />
       <item itemvalue="Application.Client2" />
       <item itemvalue="Application.Test" />
+      <item itemvalue="Application.DatabaseServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DatabaseServer" />
         <item itemvalue="Application.ClientW" />
         <item itemvalue="Application.ServerW" />
         <item itemvalue="Application.Test" />
@@ -297,7 +287,8 @@
       <workItem from="1555845106857" duration="82229000" />
       <workItem from="1557990217238" duration="18369000" />
       <workItem from="1559073597702" duration="63000" />
-      <workItem from="1559252473103" duration="15706000" />
+      <workItem from="1559252473103" duration="19209000" />
+      <workItem from="1559309489697" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="поправка проблемы двух клиентов">
       <created>1557993381135</created>
@@ -310,7 +301,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46904000" />
+    <option name="totallyTimeSpent" value="50646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -321,7 +312,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.2951096" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.29473683" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.8543517" />
@@ -330,7 +321,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50121456" side_tool="true" weight="0.44227353" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49878544" weight="0.44227353" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49878544" weight="0.67673177" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3285968" />
@@ -425,54 +416,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestingThreads.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GORGE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Race.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyThread2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingThreads.java" />
+    <entry file="file://$PROJECT_DIR$/src/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/GORGE.java" />
+    <entry file="file://$PROJECT_DIR$/src/Race.java" />
+    <entry file="file://$PROJECT_DIR$/src/MyThread2.java" />
     <entry file="file://$PROJECT_DIR$/src/Client2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -484,16 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="88" selection-start-line="54" selection-start-column="88" selection-end-line="54" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -530,18 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="140" column="27" lean-forward="true" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5628#5789#0" expanded="true" />
-            <element signature="e#5788#5789#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PasswordGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1338">
@@ -549,32 +478,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#2004#2005#0" expanded="true" />
             <element signature="e#2062#2063#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PoThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,20 +492,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseCommands.java">
+    <entry file="file://$PROJECT_DIR$/src/PoThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="149" column="1" lean-forward="true" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ParseLine.java">
+    <entry file="file://$PROJECT_DIR$/src/ClientW.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerW.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -611,8 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="816">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#sendMessageToClient#0;class#Commands#0" />
@@ -620,14 +533,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ParseLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="104" selection-start-line="16" selection-start-column="104" selection-end-line="16" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="34">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1115#1116#0" expanded="true" />
             <element signature="e#1195#1196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="126" column="34" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3961">
+          <caret line="240" column="74" selection-start-line="240" selection-start-column="74" selection-end-line="240" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

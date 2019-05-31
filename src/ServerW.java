@@ -4,7 +4,7 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ServerW {
+public class ServerW {}/*
     public static void main(String[] args) {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -62,3 +62,4 @@ public class ServerW {
         }
     }
 }
+*/
