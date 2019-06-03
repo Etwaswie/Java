@@ -12,7 +12,7 @@ public class DatabaseConnection {
     }
 
     public Connection getConnection(){
-        System.out.println("Проверяем, есть ли подключение к PostgreSQL JDBC");
+        System.out.println("Проверяем, есть ли подключение к PostgreSQL");
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {

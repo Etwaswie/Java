@@ -14,9 +14,9 @@ public class DatabaseServer {
         /**
          * подключаемся к базе данных
          * для гелиоса следующие параметры:
-         * String URL = "jdbc:postgresql://pg/studs"; jdbc:postgresql://localhost:5433/studs"
-         * String userLogin = "s265949"; postgres
-         * String userPassword = "coj266";
+         * String URL = "jdbc:postgresql://pg/postgres"; jdbc:postgresql://localhost:5433/postgres"
+         * String userLogin = "s265153"; postgres
+         * String userPassword = "123";
          * @database - переменная для обращения к базе данных и получение из нее данных
          */
         String URL = "jdbc:postgresql://localhost:5433/postgres";
@@ -51,7 +51,7 @@ public class DatabaseServer {
                     }
                     else {
                         database.createStatement().executeUpdate(
-                                "create table if not exists \"Shows\" (\n" +
+                                "create table if not exists \"Ships\" (\n" +
                                         "\"NAME\" varchar not null,\n" +
                                         "\"SIZE\" varchar not null,\n" +
                                         "\"PLACE\" varchar not null,\n" +
