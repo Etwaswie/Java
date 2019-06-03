@@ -97,7 +97,7 @@ public class DatabaseCommands {
      */
     public static void uploadShips(Connection database, CopyOnWriteArrayList<Ship> ships, Socket clientSocket){
         try {
-            database.createStatement().executeUpdate("delete from \"Ship\"");
+            database.createStatement().executeUpdate("delete from \"Ships\"");
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -134,9 +134,8 @@ public class DatabaseCommands {
             for (int i = 0; i < ships.size(); i++) {
                 PreparedStatement pstmt = database.prepareStatement("insert into " +
                         "\"Ships\"(\"NAME\", \"SIZE\", \"PLACE\", \"DATEOFCREATION\", \"CREATOR\")" +
-                        " values (?, ?, ?, ?, ?, ?)");
+                        " values (?, ?, ?, ?, ?)");
                 pstmt.setString(1, ships.get(i).getName());
-
                 pstmt.setString(2, Integer.toString(ships.get(i).getSize()));
                 pstmt.setString(3, ships.get(i).getPlace());
                 pstmt.setString(4, ships.get(i).getDatу().toString());

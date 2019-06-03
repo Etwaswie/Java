@@ -236,6 +236,7 @@ public class MyThread implements Runnable {
                     else if (readClientStream.startsWith("add")) {
                         ParseLine.parseLine(readClientStream,ships,clientSocket);
                             Commands.sendMessageToClient("Успешно добавлен элемент в коллецию", clientSocket);
+
                     } //остановить программу
                     else if (readClientStream.equals("stop")) {
                         Commands.sendMessageToClient("Вы завершили работу.", clientSocket);
@@ -250,7 +251,7 @@ public class MyThread implements Runnable {
                         clientSocket = null;
                     }
                     else {
-                        Commands.sendMessageToClient("Введена неверная комманда", clientSocket);
+                        Commands.sendMessageToClient("Введена неверная команда", clientSocket);
                     }
                 }
             }

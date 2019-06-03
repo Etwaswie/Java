@@ -14,7 +14,7 @@ public class DatabaseServer {
         /**
          * подключаемся к базе данных
          * для гелиоса следующие параметры:
-         * String URL = "jdbc:postgresql://pg/postgres"; jdbc:postgresql://localhost:5433/postgres"
+         * String URL = "jdbc:postgresql://pg/studs"; jdbc:postgresql://localhost:5433/studs"
          * String userLogin = "s265153"; postgres
          * String userPassword = "123";
          * @database - переменная для обращения к базе данных и получение из нее данных
@@ -103,7 +103,7 @@ public class DatabaseServer {
         /**
          * создание сокета сервера
          */
-        int port = 7769;
+        int port = 6767;
         //Проверяем доступность порта
         ServerSocket serverSocket = null;
         try {

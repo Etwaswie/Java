@@ -71,5 +71,7 @@ public class Ship implements Comparator {
         this.date = dateOfCreation;
         this.place = place;
         this.creator = creator;
+        //     IsjLT1
+        //     krupenina.p@mail.ru
     }
 }

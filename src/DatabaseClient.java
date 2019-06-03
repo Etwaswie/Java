@@ -1,3 +1,10 @@
+
+
+import java.io.*;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -66,17 +73,25 @@ public class DatabaseClient {
                     DataInputStream inStream = new DataInputStream(iStream);
                     data = inStream.readUTF();
                     System.out.println("Сервер ответил: \n" + data);
-                    if (data.equals("Вы завершили работу. Идите с богом.")){;
+
+
+
+                    //НЕ ЭТО НЕ ЭТО НЕ ЭТО
+                    if (data.equals("Вы завершили работу. Идите с богом")){
                         System.exit(1);
+                    //НЕ ЭТО НЕ ЭТО НЕ ЭТО НЕ ЭТО
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    System.out.println("Погоди, браток, возможно, сервера упали");
+                    System.out.println("Проблема с сервером");
                 }
             }
         } catch (IOException e) {
-            System.out.println("Ошибка записи сообщения!");
+            System.out.println("Ошибка записи сообщения");
             System.exit(-1);
         }
     }
 }
+
+
+
