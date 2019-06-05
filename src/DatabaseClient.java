@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
 public class DatabaseClient {
     public static void main(String[] args) {
         String host = "localhost";
-        int port = 7769;
+        int port = 7878;
 
         //Создаем сокет
         String data;
@@ -77,7 +77,7 @@ public class DatabaseClient {
 
 
                     //НЕ ЭТО НЕ ЭТО НЕ ЭТО
-                    if (data.equals("Вы завершили работу. Идите с богом")){
+                    if (data.equals("Вы завершили работу.")){
                         System.exit(1);
                     //НЕ ЭТО НЕ ЭТО НЕ ЭТО НЕ ЭТО
                     }
