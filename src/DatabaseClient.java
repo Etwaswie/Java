@@ -24,7 +24,6 @@ public class DatabaseClient {
             System.out.println("Неизвестный хост: " + host);
             System.exit(-1);
         } catch (IOException e) {
-            System.err.println(e);
             System.out.println("Ошибка ввода/вывода при создании сокета " + host
                     + ":" + port);
             System.exit(-1);
@@ -59,7 +58,7 @@ public class DatabaseClient {
                     writer.write("superStop");
                     writer.flush();
                 } catch (IOException e){
-                    e.printStackTrace();
+                    System.out.println("Сервер был отключен");
                 }
             }
         });
@@ -82,8 +81,9 @@ public class DatabaseClient {
                     //НЕ ЭТО НЕ ЭТО НЕ ЭТО НЕ ЭТО
                     }
                 } catch (IOException e) {
-                    e.printStackTrace();
+
                     System.out.println("Проблема с сервером");
+                    System.out.println(e);
                 }
             }
         } catch (IOException e) {

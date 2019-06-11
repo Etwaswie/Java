@@ -167,7 +167,7 @@ public class MyThread implements Runnable {
                                         pstmt.setString(2, passwordHax);
                                         pstmt.executeUpdate();
                                     } catch (SQLException e) {
-                                        e.printStackTrace();
+                                        System.out.println(e);
                                     }
                                     Users = DatabaseCommands.importUsers(database);
                                     Commands.sendMessageToClient("Введите пароль", clientSocket);
@@ -185,9 +185,9 @@ public class MyThread implements Runnable {
                     if (key3) {
                         if ((Users.get(userMail)).equals(DatabaseCommands.MD5hash(readClientStream))) {
                             Commands.sendMessageToClient("Успешная авторизация.\n" +
-                                    "список доступных команд:\n" +
-                                    "show | info |remove_first | remove | remove_greater | remove_lower | " +
-                                    "stop | sort_by_theme | sort_by_rating ", clientSocket);
+                                    "Список доступных команд(JSON):\n" +
+                                    "show | info | add_if_max{} |" +
+                                    "add_if_min{} | remove{} | remove_lower{} | stop |  ", clientSocket);
                             System.out.println("Пользователь " + userMail + " авторизовался");
                             keyQuit = true;
                             break;
@@ -210,7 +210,9 @@ public class MyThread implements Runnable {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка ввода-вывода");
+            System.out.println(e);
+
         }
 
         /**
@@ -220,9 +222,7 @@ public class MyThread implements Runnable {
             while (!clientSocket.isClosed()) {
                 while ((readClientStream = reader.readLine()) != null) {
                     //удалить первый элемент
-                    if (readClientStream.equals("remove_first")) {
-                     //   Commands.removeFirst(ships, clientSocket, userMail);
-                    } else if (readClientStream.equals("save")) {
+                    if (readClientStream.equals("save")) {
                         DatabaseCommands.uploadShips(database, ships, clientSocket);
                     }
                     //информация о коллекции
@@ -235,20 +235,31 @@ public class MyThread implements Runnable {
                     } //добавляем объект в нашу коллекцию
                     else if (readClientStream.startsWith("add")) {
                         if ((readClientStream.contains("{\"name\":\""))&&(readClientStream.contains("\",\"size\":\""))&&(readClientStream.contains("\",\"place\":\""))&&(readClientStream.contains("\"}"))) {
-                            //add{"name":"o","size":"3","place":"tuta"}
-
-                            ParseLine.parseLine(readClientStream,ships,userMail);
-                            Commands.sendMessageToClient("Успешно добавлен элемент в коллецию", clientSocket);
+                            //      add{"name":"po","size":"8","place":"tuta"}
+                            //      add_if_min{"name":"o","size":"5678","place":"tuta"}
+                            //      add_if_max{"name":"o","size":"5678","place":"tuta"}
+                            ParseLine.parseLine(readClientStream,ships,userMail,clientSocket);
                         }
                         else Commands.sendMessageToClient("Неверный формат команды",clientSocket);
-                    } //остановить программу
+                    }
+
+                    else if (readClientStream.startsWith("remove")) {
+                        if ((readClientStream.contains("{\"name\":\""))&&(readClientStream.contains("\",\"size\":\""))&&(readClientStream.contains("\",\"place\":\""))&&(readClientStream.contains("\"}"))) {
+                            ParseLine.parseLine(readClientStream,ships,userMail,clientSocket);
+                        }
+                        else Commands.sendMessageToClient("Неверный формат команды",clientSocket);
+                    }
+
+                    //остановить программу
                     else if (readClientStream.equals("stop")) {
                         Commands.sendMessageToClient("Вы завершили работу.", clientSocket);
                         DatabaseCommands.uploadShips(database, ships, clientSocket);
                         reader.close();
                         clientSocket.close();
                         clientSocket = null;
-                    } else if (readClientStream.equals("superStop")){
+                    }
+
+                    else if (readClientStream.equals("superStop")){
                         DatabaseCommands.uploadShips(database, ships, clientSocket);
                         reader.close();
                         clientSocket.close();

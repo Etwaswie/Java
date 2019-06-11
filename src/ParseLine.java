@@ -14,7 +14,7 @@ public class ParseLine {
 
     }*/
 
-    static void parseLine(String readClientStream, CopyOnWriteArrayList<Ship> ships, String userMail){
+    static void parseLine(String readClientStream, CopyOnWriteArrayList<Ship> ships, String userMail,Socket clientSocket){
         String creator = userMail;
         String a = readClientStream;
         String[] ab = a.split(":\"", 5);
@@ -23,17 +23,17 @@ public class ParseLine {
         String place = ab[3].substring(0, ab[3].indexOf("\""));
 
         if (a.startsWith("add{")) {
-            Commands.add(ships, name, size, place, creator);
+            Commands.add(ships, name, size, place, creator,clientSocket);
 
         } else if (a.startsWith("add_if_max")) {
-            Commands.add_if_max(ships, name, size, place ,creator);
+            Commands.add_if_max(ships, name, size, place ,creator,clientSocket);
         } else if (a.startsWith("add_if_min")) {
-            Commands.add_if_min(ships, name, size, place,creator);
-        }/* else if (a.startsWith("remove{")) {
-            Commands.remove(ships, name, size, place, clientSocket,creator);
+            Commands.add_if_min(ships, name, size, place,creator,clientSocket);
+        } else if (a.startsWith("remove{")) {
+            Commands.remove(ships, name, size, place, creator,clientSocket);
         } else if (a.startsWith("remove_lower")) {
-            Commands.remove_lower(ships, name, size, place, date, clientSocket,creator);
-        }*/
+            Commands.remove_lower(ships, name, size, place, creator,clientSocket);
+        }
 
 
     }}
