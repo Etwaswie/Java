@@ -19,7 +19,7 @@ public class DatabaseServer {
          * String userPassword = "123";
          * @database - переменная для обращения к базе данных и получение из нее данных
          */
-        String URL = "jdbc:postgresql://localhost:5432/postgres";
+        String URL = "jdbc:postgresql://localhost:5433/postgres";
         String userLogin = "postgres";
         String userPassword = "123";
         Connection database = new DatabaseConnection(URL, userLogin, userPassword).getConnection();
@@ -46,7 +46,7 @@ public class DatabaseServer {
                     ResultSet data = database.createStatement().executeQuery("select * from " +
                             "INFORMATION_SCHEMA.TABLES where table_name = 'Ships'");
                     if (data.next()) {
-                        System.err.println("таблица Ships уже существует");
+                        System.out.println("таблица Ships уже существует");
                         DatabaseCommands.ImportDatabase(database, ships);
                     }
                     else {
@@ -63,7 +63,7 @@ public class DatabaseServer {
                     data = database.createStatement().executeQuery("select * from " +
                             "INFORMATION_SCHEMA.TABLES where table_name = 'Users'");
                     if (data.next()){
-                        System.err.println("таблица Users уже существует");
+                        System.out.println("таблица Users уже существует");
                         Users = DatabaseCommands.importUsers(database);
                     }
                     else {
