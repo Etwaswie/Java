@@ -221,8 +221,8 @@ public class MyThread implements Runnable {
                 while ((readClientStream = reader.readLine()) != null) {
                     //удалить первый элемент
                     if (readClientStream.equals("remove_first")) {
-                        Commands.removeFirst(ships, clientSocket, userMail);
-                    } else if (readClientStream.equals("Save")) {
+                     //   Commands.removeFirst(ships, clientSocket, userMail);
+                    } else if (readClientStream.equals("save")) {
                         DatabaseCommands.uploadShips(database, ships, clientSocket);
                     }
                     //информация о коллекции
@@ -234,9 +234,13 @@ public class MyThread implements Runnable {
 
                     } //добавляем объект в нашу коллекцию
                     else if (readClientStream.startsWith("add")) {
-                        ParseLine.parseLine(readClientStream,ships,clientSocket);
-                            Commands.sendMessageToClient("Успешно добавлен элемент в коллецию", clientSocket);
+                        if ((readClientStream.contains("{\"name\":\""))&&(readClientStream.contains("\",\"size\":\""))&&(readClientStream.contains("\",\"place\":\""))&&(readClientStream.contains("\"}"))) {
+                            //add{"name":"o","size":"3","place":"tuta"}
 
+                            ParseLine.parseLine(readClientStream,ships,userMail);
+                            Commands.sendMessageToClient("Успешно добавлен элемент в коллецию", clientSocket);
+                        }
+                        else Commands.sendMessageToClient("Неверный формат команды",clientSocket);
                     } //остановить программу
                     else if (readClientStream.equals("stop")) {
                         Commands.sendMessageToClient("Вы завершили работу.", clientSocket);
@@ -255,8 +259,12 @@ public class MyThread implements Runnable {
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Пользователь " + userMail + " отключился");
+            //System.out.println(e);
+        }
+        catch (IndexOutOfBoundsException e){
+            Commands.sendMessageToClient("Проблема с циферками....",clientSocket);
         }
     }
 }

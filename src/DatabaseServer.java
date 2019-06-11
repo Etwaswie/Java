@@ -24,7 +24,7 @@ public class DatabaseServer {
         String userPassword = "123";
         Connection database = new DatabaseConnection(URL, userLogin, userPassword).getConnection();
 
-
+       // add {"Name":"r","Rating":"56","Theme":"DANCING","Place":"t"}
 
 
         /**
