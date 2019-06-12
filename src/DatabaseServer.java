@@ -14,7 +14,8 @@ public class DatabaseServer {
         /**
          * подключаемся к базе данных
          * для гелиоса следующие параметры:
-         * String URL = "jdbc:postgresql://pg/studs"; jdbc:postgresql://localhost:5432/studs"
+         * String URL = "jdbc:postgresql://pg/studs";
+         * jdbc:postgresql://localhost:5433/studs"
          * String userLogin = "s265153"; postgres
          * String userPassword = "123";
          * @database - переменная для обращения к базе данных и получение из нее данных
@@ -25,7 +26,6 @@ public class DatabaseServer {
         Connection database = new DatabaseConnection(URL, userLogin, userPassword).getConnection();
 
        // add {"Name":"r","Rating":"56","Theme":"DANCING","Place":"t"}
-
 
         /**
          * импорт или создание базы данных

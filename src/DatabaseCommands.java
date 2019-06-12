@@ -113,7 +113,7 @@ public class DatabaseCommands {
                 pstmt.setString(5, ships.get(i).getCreator());
                 pstmt.executeUpdate();
             }
-            Commands.sendMessageToClient("Коллекция успешно загружена в базу данных", clientSocket);
+           // Commands.sendMessageToClient("Коллекция успешно загружена в базу данных", clientSocket);
         } catch (SQLException e){
             e.printStackTrace();
         }

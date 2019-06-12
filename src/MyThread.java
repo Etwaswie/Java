@@ -66,7 +66,8 @@ public class MyThread implements Runnable {
             while (!clientSocket.isClosed()) {
                 if (keyQuit) break;
                 while ((readClientStream = reader.readLine()) != null) {
-                    /**
+                    /**[\o/
+                     * '
                      * фаза 1 - залогиниться/зарегаться
                      */
                     if (key1) {
@@ -187,7 +188,7 @@ public class MyThread implements Runnable {
                             Commands.sendMessageToClient("Успешная авторизация.\n" +
                                     "Список доступных команд(JSON):\n" +
                                     "show | info | add_if_max{} |" +
-                                    "add_if_min{} | remove{} | remove_lower{} | stop |  ", clientSocket);
+                                    " add_if_min{} | remove{} | remove_lower{} | stop |  ", clientSocket);
                             System.out.println("Пользователь " + userMail + " авторизовался");
                             keyQuit = true;
                             break;
@@ -201,9 +202,7 @@ public class MyThread implements Runnable {
                             userChoice = "";
                             userMail = "";
                         } else {
-                            Commands.sendMessageToClient("Неверный пароль. Попробуйте снова " +
-                                    "\nВы так же можете вернуться к выбору Login/Password" +
-                                    " с помощью комманды back", clientSocket);
+                            Commands.sendMessageToClient("Неверный пароль.Попробуйте снова", clientSocket);
                         }
                     }
                     if (userChoice.equals("Password") || userChoice.equals("getPasswordOnEmail")) key3 = true;
@@ -224,6 +223,7 @@ public class MyThread implements Runnable {
                     //удалить первый элемент
                     if (readClientStream.equals("save")) {
                         DatabaseCommands.uploadShips(database, ships, clientSocket);
+                        Commands.sendMessageToClient("Коллекция успешно загружена в базу данных", clientSocket);
                     }
                     //информация о коллекции
                     else if (readClientStream.equals("info")) {
